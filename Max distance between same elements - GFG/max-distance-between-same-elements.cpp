@@ -8,13 +8,14 @@ class Solution{
     // your task is to complete this function
     int maxDistance(int arr[], int n)
     {
-        int ans=0;
         unordered_map<int,int> m;
+        int res=0;
         for(int i=0;i<n;i++) {
-            if(!m[arr[i]]) m[arr[i]]=i+1;
-            else ans=max(ans,i-m[arr[i]]+1);
+            if(!m[arr[i]])
+            m[arr[i]]=i+1;
+            else res=max(res,i+1-m[arr[i]]);
         }
-        return ans;
+        return res;
     }
 };
 
